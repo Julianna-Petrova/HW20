@@ -1,0 +1,58 @@
+Инициализируем гит репозиторий.
+cd ~/Projects/homework/20
+git init
+
+Создаем файл index.html
+vim index.html
+:wq!
+git status 
+
+Изменяем статус файла чтобы гит его трекал.
+git add index.html
+git status 
+
+Делаем коммит с сообщением "initial commit"
+git commit -m "initial commit"
+
+Добавляем remote repository gitthub
+git remote add origin https://github.com/Julianna-Petrova/HW20.git
+
+Делаем пуш в удаленный репозиторий.
+git push origin master
+
+Создаем файл style.css и добавляем его в предыдущий коммит.
+vim style.css
+:wq!
+git status
+git add style.css
+git commit --amend
+
+Пушим на сервер.
+git push -f origin master
+
+Меняем файл style.css
+nano style.css
+git status
+git add style.css
+
+
+Откатываем изменения style.css
+$ git checkout -- style.css
+
+Делаем копию папки и из новой папки создаем новую ветку new-branch
+cd ..
+git clone https://github.com/Julianna-Petrova/HW20.git
+cd ~/Projects/homework/HW20  
+git checkout -b new-branch 
+
+Создаем файл main.js и делаем с ним коммит и пуш
+vim main.js
+git add main.js     
+git status 
+git commit -m "initial main.js" 
+git push origin new-branch  
+
+Переходим в первоначальную папку и спуливаем изменения из ветки new-branch в ветку master.
+cd ..
+20
+git pull origin new-branch: master
